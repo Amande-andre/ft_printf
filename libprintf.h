@@ -6,7 +6,7 @@
 /*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 14:40:06 by anmande           #+#    #+#             */
-/*   Updated: 2022/06/12 16:31:43 by admin            ###   ########.fr       */
+/*   Updated: 2022/06/12 19:31:14 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@
 # include <string.h>
 # include <stddef.h>
 # include <stdarg.h>
+
+// typedef struct s_value
+// {
+// 	size_t	len;
+// 	size_t  index;
+// }	t_value;
 
 int	ft_printf(const char *s, ...);
 

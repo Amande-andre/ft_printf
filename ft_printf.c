@@ -6,7 +6,7 @@
 /*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 18:43:16 by anmande           #+#    #+#             */
-/*   Updated: 2022/06/12 19:04:40 by admin            ###   ########.fr       */
+/*   Updated: 2022/06/12 21:05:57 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,11 @@ int	ft_printf(const char *s, ...)
 			len = len + ft_putnbr_fd(va_arg(args, int), 1, 1);
 			i++;
 		}
+		if (s[i] == '%' && s[i + 1] == 'p')
+		{
+			len += ft_putstr_fd(va_arg(args, char *), 1);
+			i++;
+		}
 	}
 	va_end(args);
 	return (len);
@@ -49,6 +54,9 @@ int	ft_printf(const char *s, ...)
 
 int	main()
 {
-	int i = 100;
-	printf("%d\n", ft_printf("%i%s", i, " = "));
+	char *s;
+
+	s = "test";
+	//int i = 100;
+	printf("%d\n", ft_printf("%p%sen", s, " = "));
 }
