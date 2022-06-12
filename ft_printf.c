@@ -6,7 +6,7 @@
 /*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 18:43:16 by anmande           #+#    #+#             */
-/*   Updated: 2022/06/12 18:48:56 by admin            ###   ########.fr       */
+/*   Updated: 2022/06/12 19:04:40 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_printf(const char *s, ...)
 		}
 		if (s[i] == '%' && (s[i + 1] == 'd' || s[i + 1] == 'i'))
 		{
-			len = len + ft_putnbr_fd(va_arg(args, int), 1);
+			len = len + ft_putnbr_fd(va_arg(args, int), 1, 1);
 			i++;
 		}
 	}

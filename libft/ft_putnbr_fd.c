@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anmande <anmande@student.42.fr>            +#+  +:+       +#+        */
+/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 11:44:24 by anmande           #+#    #+#             */
-/*   Updated: 2022/06/02 18:35:04 by anmande          ###   ########.fr       */
+/*   Updated: 2022/06/12 18:56:47 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+size_t	ft_putnbr_fd(int n, int fd, size_t i)
 {
 	size_t	nb;
 
@@ -26,9 +26,10 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd(nb + '0', fd);
 	if (nb >= 10)
 	{
-		ft_putnbr_fd(nb / 10, fd);
-		ft_putnbr_fd(nb % 10, fd);
+		ft_putnbr_fd(nb / 10, fd, i++);
+		ft_putnbr_fd(nb % 10, fd, i++);
 	}
+	return (i);
 }
 
 // #include <stdio.h>
