@@ -6,7 +6,7 @@
 /*   By: anmande <anmande@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 18:43:16 by anmande           #+#    #+#             */
-/*   Updated: 2022/06/13 12:22:07 by anmande          ###   ########.fr       */
+/*   Updated: 2022/06/13 15:10:33 by anmande          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,47 +17,52 @@
 int	ft_printf(const char *s, ...)
 {
 	va_list args;
-	size_t	len;
-	size_t i;
 
-	len = 0;
-	i = -1;
+	struct s_value t_value = {0, -1};
 	va_start(args, s);
-	while (s[++i])
+	while (s[t_value.index])
 	{	
-		if (s[i] != '%')
-			len += ft_putchar_fd(s[i], 1);
-		if (s[i] == '%' && s[i + 1] == 'c')
+		if (s[t_value.index] != '%')
+			t_value.len += ft_putchar_fd(s[t_value.index], 1);
+		if (s[t_value.index] == '%' && s[t_value.index 1] == 'c')
 		{
-			len = len + ft_putchar_fd(va_arg(args, size_t), 1);
-			i++;
+			t_value.len = t_value.len + ft_putchar_fd(va_arg(args, size_t), 1);
+			t_value.index++;
 		}
-		if (s[i] == '%' && s[i + 1] == 's')
+		if (s[t_value.index] == '%' && s[t_value.index 1] == 's')
 		{
-			len += ft_putstr_fd(va_arg(args, char *), 1);
-			i++;
+			t_value.len += ft_putstr_fd(va_arg(args, char *), 1);
+			t_value.index++;
 		}
-		if (s[i] == '%' && (s[i + 1] == 'd' || s[i + 1] == 'i'))
+		if (s[t_value.index] == '%' && (s[t_value.index + 1] == 'd' || s[t_value.index + 1] == 'i'))
 		{
-			len = len + ft_putnbr_fd(va_arg(args, int), 1, 1);
-			i++;
+			t_value.len = t_value.len + ft_putnbr_fd(va_arg(args, int), 1, 1);
+			t_value.index++;
 		}
-		if (s[i] == '%' && s[i + 1] == 'x')
+		if (s[t_value.index] == '%' && s[t_value.index + 1] == 'x')
 		{
-			len += ft_flagx(va_arg(args, int), 1, 0, "0123456789abcdef");
-			i++;
+			t_value.len += ft_flagx(va_arg(args, int), 1, 0, "0123456789abcdef");
+			t_value.index++;
 		}
+		if (s[t_value.index] == '%' && s[t_value.index + 1] == 'X')
+		{
+			t_value.len += ft_flagx(va_arg(args, int), 1, 0, "0123456789ABCDEF");
+			t_value.index++;
+		}
+		// if (s[t_value.index] == '%' && s[t_value.index 1] == 'p')
+		// {
+		// 	void	*ptr = va_arg(args, size_t);
+		// 	t_value.index++;
+		// }
 	}
 	va_end(args);
-	return (len);
+	return (t_value.len);
 }
 
 int	main()
 {
-	// char *s;
-
-	// s = "test";
+	 
 	int n = 32;
-	//int i = 100;
-	printf(" %d\n", ft_printf("%x", n));
+	int i = 100;
+	printf(" %d\n", ft_printf("%d%x", i, n));
 }
