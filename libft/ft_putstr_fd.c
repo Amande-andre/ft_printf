@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: anmande <anmande@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 11:01:26 by anmande           #+#    #+#             */
-/*   Updated: 2022/06/12 19:01:55 by admin            ###   ########.fr       */
+/*   Updated: 2022/06/13 17:38:45 by anmande          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd, t_value *value)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (s[i])
 	{
-		ft_putchar_fd(s[i], fd);
+		ft_putchar_fd(s[i], fd, value);
 		i++;
 	}
-	return (i);		
+	value->index++;
 }

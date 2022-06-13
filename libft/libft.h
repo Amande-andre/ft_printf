@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: anmande <anmande@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 08:39:43 by anmande           #+#    #+#             */
-/*   Updated: 2022/06/12 19:04:02 by admin            ###   ########.fr       */
+/*   Updated: 2022/06/13 17:41:59 by anmande          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,14 @@
 # include <stdlib.h>
 # include <string.h>
 # include <stddef.h>
-
-typedef struct s_list
+typedef struct s_value
 {
-	void			*content;
-	struct s_list	*next;
-}	t_list;
-
-size_t	ft_putchar_fd(char c, int fd);
-size_t	ft_putstr_fd(char *s, int fd);
-size_t	ft_putnbr_fd(int n, int fd, size_t i);
+	int	len;
+	int	index;
+}	t_value;
+void	ft_putchar_fd(char c, int fd, t_value *s_value);
+void	ft_putstr_fd(char *s, int fd, t_value *s_value);
+void	ft_putnbr_fd(int n, int fd, t_value *s_value);
 char	*ft_itoa(int n);
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);

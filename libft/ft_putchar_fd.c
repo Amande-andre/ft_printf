@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: anmande <anmande@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 10:57:29 by anmande           #+#    #+#             */
-/*   Updated: 2022/06/12 19:02:29 by admin            ###   ########.fr       */
+/*   Updated: 2022/06/13 17:12:30 by anmande          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd, t_value *value)
 {
 	write(fd, &c, 1);
-	return (1);
+	value->len++;
 }
