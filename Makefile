@@ -6,7 +6,7 @@
 #    By: anmande <anmande@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/07 11:41:09 by anmande           #+#    #+#              #
-#    Updated: 2022/06/09 17:42:26 by anmande          ###   ########.fr        #
+#    Updated: 2022/06/13 11:33:56 by anmande          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRC =	ft_printf.c
+SRC =	ft_printf.c \
+		ft_flagx.c
 
 #BONUS_SRC = 
 			

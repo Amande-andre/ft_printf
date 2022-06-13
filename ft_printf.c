@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: anmande <anmande@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 18:43:16 by anmande           #+#    #+#             */
-/*   Updated: 2022/06/12 21:05:57 by admin            ###   ########.fr       */
+/*   Updated: 2022/06/13 12:22:07 by anmande          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ int	ft_printf(const char *s, ...)
 			len = len + ft_putnbr_fd(va_arg(args, int), 1, 1);
 			i++;
 		}
-		if (s[i] == '%' && s[i + 1] == 'p')
+		if (s[i] == '%' && s[i + 1] == 'x')
 		{
-			len += ft_putstr_fd(va_arg(args, char *), 1);
+			len += ft_flagx(va_arg(args, int), 1, 0, "0123456789abcdef");
 			i++;
 		}
 	}
@@ -54,9 +54,10 @@ int	ft_printf(const char *s, ...)
 
 int	main()
 {
-	char *s;
+	// char *s;
 
-	s = "test";
+	// s = "test";
+	int n = 32;
 	//int i = 100;
-	printf("%d\n", ft_printf("%p%sen", s, " = "));
+	printf(" %d\n", ft_printf("%x", n));
 }

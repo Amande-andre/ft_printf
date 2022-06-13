@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: anmande <anmande@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 11:44:24 by anmande           #+#    #+#             */
-/*   Updated: 2022/06/12 18:56:47 by admin            ###   ########.fr       */
+/*   Updated: 2022/06/13 10:37:03 by anmande          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ size_t	ft_putnbr_fd(int n, int fd, size_t i)
 	{
 		nb *= -1;
 		ft_putchar_fd('-', fd);
+		i++;
 	}	
 	if (nb <= 9)
 		ft_putchar_fd(nb + '0', fd);

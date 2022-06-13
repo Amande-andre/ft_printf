@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libprintf.h                                        :+:      :+:    :+:   */
+/*   ft_flagx.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anmande <anmande@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/09 14:40:06 by anmande           #+#    #+#             */
-/*   Updated: 2022/06/13 12:13:44 by anmande          ###   ########.fr       */
+/*   Created: 2022/06/13 11:01:23 by anmande           #+#    #+#             */
+/*   Updated: 2022/06/13 12:21:52 by anmande          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBPRINTF_H
-# define LIBPRINTF_H
+#include "libprintf.h"
 
-#include "../ft_printf/libft/libft.h"
-# include <unistd.h>
-# include <stdlib.h>
-# include <string.h>
-# include <stddef.h>
-# include <stdarg.h>
+size_t	ft_flagx(int n, int fd, size_t i, char *base)
+{
+	size_t	nb;
 
-// typedef struct s_value
-// {
-// 	size_t	len;
-// 	size_t  index;
-// }	t_value;
-
-int	ft_printf(const char *s, ...);
-size_t	ft_flagx(int n, int fd, size_t i, char *base);
-
-#endif
+	nb = n;
+	if (n < 0)
+	{
+		nb *= -1;
+		ft_putchar_fd('-', fd);
+		i++;
+	}	
+	if (nb >= 16)
+	{
+		ft_flagx(nb / 16, fd, i++, base);
+	}
+	ft_putchar_fd(base[nb % 16], fd);
+	i++;
+	return (i);
+}
