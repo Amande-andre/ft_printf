@@ -6,13 +6,13 @@
 /*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 11:44:24 by anmande           #+#    #+#             */
-/*   Updated: 2022/06/17 13:41:02 by admin            ###   ########.fr       */
+/*   Updated: 2022/06/17 14:44:22 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned long	ft_putnbr_fd(int n, int fd, unsigned long len)
+unsigned int	ft_putnbr_fd(int n, int fd, unsigned int len)
 {
 	size_t			nb;
 

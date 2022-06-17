@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anmande <anmande@student.42.fr>            +#+  +:+       +#+         #
+#    By: admin <admin@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/07 11:41:09 by anmande           #+#    #+#              #
-#    Updated: 2022/06/13 11:33:56 by anmande          ###   ########.fr        #
+#    Updated: 2022/06/17 16:34:22 by admin            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 SRC =	ft_printf.c \
-		ft_flagx.c
+		ft_flagx.c \
+		ft_flagp.c
 
 #BONUS_SRC = 
 			

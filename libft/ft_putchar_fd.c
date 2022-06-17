@@ -6,13 +6,13 @@
 /*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 10:57:29 by anmande           #+#    #+#             */
-/*   Updated: 2022/06/17 13:07:36 by admin            ###   ########.fr       */
+/*   Updated: 2022/06/17 14:40:55 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned long	ft_putchar_fd(char c, int fd)
+unsigned int	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 	return (1);

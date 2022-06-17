@@ -6,7 +6,7 @@
 /*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 08:39:43 by anmande           #+#    #+#             */
-/*   Updated: 2022/06/17 13:42:10 by admin            ###   ########.fr       */
+/*   Updated: 2022/06/17 18:37:44 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 # include <string.h>
 # include <stddef.h>
 
-unsigned long	ft_putchar_fd(char c, int fd);
-unsigned long	ft_putstr_fd(char *s, int fd);
-unsigned long	ft_putnbr_fd(int n, int fd, unsigned long len);
+unsigned int	ft_putchar_fd(char c, int fd);
+unsigned int	ft_putstr_fd(char *s, int fd);
+unsigned int	ft_putnbr_fd(int n, int fd, unsigned int len);
 char			*ft_itoa(int n);
 void			*ft_memset(void *s, int c, size_t n);
 void			ft_bzero(void *s, size_t n);
