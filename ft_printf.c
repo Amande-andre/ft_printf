@@ -6,7 +6,7 @@
 /*   By: anmande <anmande@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 18:43:16 by anmande           #+#    #+#             */
-/*   Updated: 2022/06/21 16:39:39 by anmande          ###   ########.fr       */
+/*   Updated: 2022/06/21 17:05:53 by anmande          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ unsigned int	ft_process(va_list args, char s)
 	else if (s == 'p')
 		return (ft_flagp(va_arg(args, long unsigned int), 1, "0123456789abcdef"));
 	else if (s == 'u')
-		return (ft_putnbr_fd(va_arg(args, unsigned int), 1, 0));
+		return (ft_putnbr_u(va_arg(args, unsigned int), 1, 0));
 	return (0);
 }
 
@@ -64,6 +64,6 @@ int	main()
 {
 	int n = -55225;
 //	int *i = &n;
-	printf("true %u\n", n);
-	ft_printf("mine %u\n", n);
+	printf("true = %u\n", n);
+	ft_printf("mine = %u\n", n);
 }
