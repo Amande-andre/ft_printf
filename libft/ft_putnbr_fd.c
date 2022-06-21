@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: anmande <anmande@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 11:44:24 by anmande           #+#    #+#             */
-/*   Updated: 2022/06/17 14:44:22 by admin            ###   ########.fr       */
+/*   Updated: 2022/06/21 16:42:32 by anmande          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,3 @@ unsigned int	ft_putnbr_fd(int n, int fd, unsigned int len)
 	len += ft_putchar_fd((nb % 10) + '0', fd);
 	return (len);
 }
-
-// #include <stdio.h>
-// int main(int ac, char **av)
-// {
-// 	(void)ac;
-// 	int n = ft_atoi(av[1]);
-// 	ft_putnbr_fd(n, 0);
-// }

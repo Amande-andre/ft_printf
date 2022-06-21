@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flagx.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: anmande <anmande@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 11:01:23 by anmande           #+#    #+#             */
-/*   Updated: 2022/06/17 18:45:29 by admin            ###   ########.fr       */
+/*   Updated: 2022/06/21 16:03:28 by anmande          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libprintf.h"
 
-unsigned int	ft_flagx(long long unsigned int n, int fd, char *base)
+unsigned int	ft_flagx(size_t n, int fd, char *base)
 {
-	int				nb;
+	size_t	nb;
 	unsigned int	len;
 	nb = n;
 	len = 0;

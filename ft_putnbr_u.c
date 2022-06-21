@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_flagp.c                                         :+:      :+:    :+:   */
+/*   ft_putnbr_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anmande <anmande@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 10:49:43 by anmande           #+#    #+#             */
-/*   Updated: 2022/06/21 16:15:20 by anmande          ###   ########.fr       */
+/*   Created: 2022/06/21 16:40:18 by anmande           #+#    #+#             */
+/*   Updated: 2022/06/21 16:46:09 by anmande          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libprintf.h"
-#include <stdio.h>
 
-unsigned int	ft_flagp(unsigned long int n, int fd, char *base)
+unsigned int	ft_putnbr_u(unsigned int n, int fd, unsigned int len)
 {
-	unsigned long long	len;	
-	unsigned long int	p;
+	size_t			nb;
 
-	p = n;	
-	len = 0;
-	if (p >= 16)
-		len += ft_flagp(p / 16, fd, base);
-	else if (p == n)
-		len += ft_putstr_fd("0x", 1);
-	len += ft_putchar_fd(base[p % 16], fd);
-	return (len);
+	nb = n;	
+	if (nb >= 10)
+	{
+		len += ft_putnbr_u(nb / 10, fd, len);
+	}
+	len += ft_putchar_fd((nb % 10) + '0', fd);
+	return (len);	
 }
