@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_flagx.c                                         :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anmande <anmande@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 11:01:23 by anmande           #+#    #+#             */
-/*   Updated: 2022/06/22 18:11:26 by anmande          ###   ########.fr       */
+/*   Created: 2022/05/18 11:01:26 by anmande           #+#    #+#             */
+/*   Updated: 2022/06/22 18:12:19 by anmande          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libprintf.h"
 
-unsigned int	ft_flagx(size_t n, int fd, char *base)
+unsigned int	ft_putstr_fd(char *s, int fd)
 {
-	size_t			nb;
-	unsigned int	len;
+	int				i;
+	unsigned long	len;
 
-	nb = n;
+	i = 0;
 	len = 0;
-	if (nb >= 16)
-		len += ft_flagx(nb / 16, fd, base);
-	len += ft_putchar_fd(base[nb % 16], fd);
+	if (s == NULL)
+		return (ft_putstr_fd("(null)", 1));
+	while (s[i])
+	{
+		len += ft_putchar_fd(s[i], fd);
+		i++;
+	}
 	return (len);
 }

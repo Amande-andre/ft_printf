@@ -6,7 +6,7 @@
 #    By: anmande <anmande@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/07 11:41:09 by anmande           #+#    #+#              #
-#    Updated: 2022/06/21 16:48:08 by anmande          ###   ########.fr        #
+#    Updated: 2022/06/22 16:12:11 by anmande          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,11 @@ CFLAGS = -Wall -Wextra -Werror
 SRC =	ft_printf.c \
 		ft_flagx.c \
 		ft_flagp.c \
-		ft_putnbr_u.c
-
+		ft_putnbr_u.c \
+		ft_putstr_fd.c \
+		ft_putnbr_fd.c \
+		ft_putchar_fd.c \
+		
 #BONUS_SRC = 
 			
 OBJ = ${SRC:.c=.o}
@@ -30,18 +33,14 @@ OBJ = ${SRC:.c=.o}
 OBJ_BONUS = ${BONUS_SRC:.c=.o}
 
 
-$(NAME): ${OBJ} $(LIBFT)
+$(NAME): ${OBJ} #$(LIBFT)
 #	cp libft/libft.a $(NAME)
 	ar -rcs ${NAME} ${OBJ}
 
-$(LIBFT):
-	make -C ./libft
+#$(LIBFT):
+#	make -C ./libft
 
 all: $(NAME)
-
-
-bonus: ${OBJ_BONUS}
-	ar -rcs ${NAME} ${OBJ_BONUS}
 
 .c.o:
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}

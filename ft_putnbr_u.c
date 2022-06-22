@@ -6,7 +6,7 @@
 /*   By: anmande <anmande@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:40:18 by anmande           #+#    #+#             */
-/*   Updated: 2022/06/21 17:05:36 by anmande          ###   ########.fr       */
+/*   Updated: 2022/06/22 18:10:47 by anmande          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ unsigned int	ft_putnbr_u(unsigned int n, int fd, unsigned int len)
 		len += ft_putnbr_u(nb / 10, fd, len);
 	}
 	len += ft_putchar_fd((nb % 10) + '0', fd);
-	return (len);	
+	return (len);
 }

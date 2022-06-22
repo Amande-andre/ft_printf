@@ -6,7 +6,7 @@
 /*   By: anmande <anmande@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 18:43:16 by anmande           #+#    #+#             */
-/*   Updated: 2022/06/21 17:05:53 by anmande          ###   ########.fr       */
+/*   Updated: 2022/06/22 18:09:03 by anmande          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,14 @@ unsigned int	ft_process(va_list args, char s)
 	return (0);
 }
 
-int	main()
-{
-	int n = -55225;
-//	int *i = &n;
-	printf("true = %u\n", n);
-	ft_printf("mine = %u\n", n);
-}
+// int	main()
+// {
+// 	char 	*n = NULL;
+// 	char	*ptr = "truc";
+// 	printf("%d", printf("%c%d%%%%c%c%s%d%d%x%p%p%u%s%s", 'a', 42, 'b', ptr, 4242, -545, 20000242, n, ptr, -42424242, n, "ok"));
+// 	printf("\n");
+// 	printf("%d", ft_printf("%c%d%%%%c%c%s%d%d%x%p%p%u%s%s", 'a', 42, 'b', ptr, 4242, -545, 20000242, n, ptr, -42424242, n, "ok"));
+	
+// 	// printf("==%d", printf("%d", -123456789));
+// 	// printf("==%d", ft_printf("%d", -123456789));
+// }

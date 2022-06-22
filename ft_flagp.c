@@ -6,7 +6,7 @@
 /*   By: anmande <anmande@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 10:49:43 by anmande           #+#    #+#             */
-/*   Updated: 2022/06/21 16:15:20 by anmande          ###   ########.fr       */
+/*   Updated: 2022/06/22 18:12:46 by anmande          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ unsigned int	ft_flagp(unsigned long int n, int fd, char *base)
 	unsigned long long	len;	
 	unsigned long int	p;
 
-	p = n;	
+	p = n;
 	len = 0;
+	if (n == 0)
+		return (ft_putstr_fd("(nil)", 1));
 	if (p >= 16)
 		len += ft_flagp(p / 16, fd, base);
 	else if (p == n)
