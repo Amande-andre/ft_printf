@@ -6,7 +6,7 @@
 /*   By: anmande <anmande@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 18:43:16 by anmande           #+#    #+#             */
-/*   Updated: 2022/06/24 14:45:07 by anmande          ###   ########.fr       */
+/*   Updated: 2022/06/24 14:52:31 by anmande          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,16 @@ int	ft_printf(const char *s, ...)
 		i++;
 	}
 	va_end(args);
-	return (len);s
+	return (len);
 }
 
 unsigned int	ft_process(va_list args, char s)
 {
 	char	*base;
+	char	*base_up;
 
 	base = "0123456789abcdef";
+	base_up = "0123456789ABCDEF";
 	if (s == '%')
 		return (ft_putchar_fd('%', 1));
 	else if (s == 'c')
@@ -53,9 +55,9 @@ unsigned int	ft_process(va_list args, char s)
 	else if (s == 'd' || s == 'i')
 		return (ft_putnbr_fd(va_arg(args, int), 1, 0));
 	else if (s == 'x')
-		return (ft_flagx(va_arg(args, unsigned long long int), 1, "0123456789abcdef"));
+		return (ft_flagx(va_arg(args, unsigned long long int), 1, base));
 	else if (s == 'X')
-		return (ft_flagx(va_arg(args, unsigned long long int), 1, "0123456789ABCDEF"));
+		return (ft_flagx(va_arg(args, unsigned long long int), 1, base_up));
 	else if (s == 'p')
 		return (ft_flagp(va_arg(args, long unsigned int), 1, base));
 	else if (s == 'u')
