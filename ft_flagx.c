@@ -6,16 +6,16 @@
 /*   By: anmande <anmande@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 11:01:23 by anmande           #+#    #+#             */
-/*   Updated: 2022/06/22 18:11:26 by anmande          ###   ########.fr       */
+/*   Updated: 2022/06/24 14:45:11 by anmande          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libprintf.h"
 
-unsigned int	ft_flagx(size_t n, int fd, char *base)
+unsigned int	ft_flagx(unsigned long long int n, int fd, char *base)
 {
-	size_t			nb;
-	unsigned int	len;
+	unsigned long long int	nb;
+	unsigned int			len;
 
 	nb = n;
 	len = 0;
