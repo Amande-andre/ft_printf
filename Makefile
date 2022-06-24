@@ -6,13 +6,13 @@
 #    By: anmande <anmande@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/07 11:41:09 by anmande           #+#    #+#              #
-#    Updated: 2022/06/22 16:12:11 by anmande          ###   ########.fr        #
+#    Updated: 2022/06/24 15:00:39 by anmande          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 LIBFT = ./libft/libft.a
 
-NAME = libprintf.a
+NAME = libftprintf.a
 
 CC = gcc 
 
